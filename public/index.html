@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poop Bot - Toilet Check-in</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button id="adminBtn" class="admin-btn" title="Admin Force Kick">⚙️</button>
+            <h1>🚽 Poop Bot</h1>
+            <p class="subtitle">Toilet Status Monitor</p>
+        </header>
+
+        <main>
+            <div class="status-card" id="statusCard">
+                <div class="status-indicator" id="statusIndicator">
+                    <div class="status-dot" id="statusDot"></div>
+                    <span class="status-text" id="statusText">Loading...</span>
+                </div>
+
+                <div class="status-details" id="statusDetails" style="display: none;">
+                    <div class="detail-item">
+                        <span class="detail-label">User:</span>
+                        <span class="detail-value" id="usernameValue">-</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Time Remaining:</span>
+                        <span class="detail-value" id="timeRemaining">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="actions">
+                <div class="input-group" id="usernameGroup" style="display: none;">
+                    <label for="usernameInput">Your Name (optional):</label>
+                    <input type="text" id="usernameInput" placeholder="Enter your name">
+                </div>
+
+                <button id="checkinBtn" class="btn btn-primary" style="display: none;">
+                    Check In
+                </button>
+
+                <button id="checkoutBtn" class="btn btn-secondary" style="display: none;">
+                    Check Out
+                </button>
+            </div>
+
+            <div class="message" id="message"></div>
+        </main>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
